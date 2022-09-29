@@ -1,21 +1,38 @@
-const eachNavOne = document.querySelector(".eachNavOne");
-const navOne = document.querySelector(".navOne");
-const eachNavTwo = document.querySelector(".eachNavTwo");
-const navTwo = document.querySelector(".navTwo");
+const eachNavOne = document.querySelectorAll(".eachNavOne");
+const navOne = document.querySelectorAll(".navOne");
+const eachNavTwo = document.querySelectorAll(".eachNavTwo");
+const navTwo = document.querySelectorAll(".navTwo");
 const menu = document.querySelector(".menu");
 const close = document.querySelector(".close");
 const sidebar = document.querySelector(".sidebar");
 
-eachNavOne.addEventListener("click", function () {
-  navOne.classList.toggle("hidden");
-  navOne.classList.add("flex");
-  navTwo.classList.add("hidden");
+eachNavOne.forEach((each) => {
+  each.addEventListener("click", function () {
+    navTwo.forEach((each) => {
+      each.classList.add("hidden");
+    });
+
+    navOne.forEach((each) => {
+      each.classList.toggle("hidden");
+    });
+    navOne.forEach((each) => {
+      each.add("flex");
+    });
+  });
 });
 
-eachNavTwo.addEventListener("click", function () {
-  navTwo.classList.toggle("hidden");
-  navTwo.classList.add("flex");
-  navOne.classList.add("hidden");
+eachNavTwo.forEach((each) => {
+  each.addEventListener("click", function () {
+    navOne.forEach((each) => {
+      each.classList.add("hidden");
+    });
+    navTwo.forEach((each) => {
+      each.classList.toggle("hidden");
+    });
+    navTwo.forEach((each) => {
+      each.classList.add("flex");
+    });
+  });
 });
 
 menu.addEventListener("click", function () {
