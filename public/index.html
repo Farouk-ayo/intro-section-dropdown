@@ -15,23 +15,100 @@
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
   </head>
   <body>
-    <section class="relative p-0 m-0 box-border">
-      <nav class="flex flex-row justify-between p-4">
-        <img src="images/logo.svg" alt="" />
-        <img src="images/icon-menu.svg" alt="" />
+    <section class="relative p-0 m-0 box-border bg-gray-400">
+      <nav class="flex flex-row justify-between p-4 items-start">
+        <div class="flex gap-10 items-start">
+          <img src="images/logo.svg" alt="" />
+          <ul class="hidden md:flex flex-row gap-6">
+            <li class="relative">
+              <div class="flex gap-1.5 items-center justify-center">
+                <a href="">Features </a
+                ><img src="images/icon-arrow-down.svg" alt="" />
+              </div>
+
+              <ul
+                class="flex flex-col gap-3 px-6 py-3 mt-4 -ml-20 justify-center z-20 bg-white shadow-2xl rounded-md fixed"
+              >
+                <li class="flex flex-row gap-3 justify-center items-center">
+                  <img src="images/icon-todo.svg" alt="" />
+                  <a href="">Todo List</a>
+                </li>
+
+                <li class="flex flex-row gap-3 justify-center items-center">
+                  <img src="images/icon-calendar.svg" alt="" />
+                  <a href="">Calendar</a>
+                </li>
+
+                <li class="flex flex-row gap-3 justify-center items-center">
+                  <img src="images/icon-reminders.svg" alt="" />
+                  <a href="">Reminders</a>
+                </li>
+
+                <li class="flex flex-row gap-3 justify-center items-center">
+                  <img src="images/icon-planning.svg" alt="" />
+                  <a href="">Planning</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="flex gap-1.5 items-center">
+                <a href="">Company </a
+                ><img src="images/icon-arrow-down.svg" alt="" />
+              </div>
+              <ul
+                class="flex flex-col gap-3 px-6 py-3 mt-4 -ml-1 justify-center z-20 bg-white shadow-2xl rounded-md fixed"
+              >
+                <li>
+                  <a href="">History</a>
+                </li>
+                <li>
+                  <a href="">Our Team</a>
+                </li>
+                <li>
+                  <a href="">Blog</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="">
+                <a href="">Careers</a>
+              </div>
+            </li>
+            <li>
+              <div class="">
+                <a href="">About</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hidden md:flex flex-row gap-4 items-center justify-center">
+          <button
+            class="hidden md:inline-block border-none outline-none self-center"
+          >
+            login
+          </button>
+          <button
+            class="hidden md:inline-block outline outline-1 self-center py-2 w-full rounded-xl md:self-start md:w-fit md:px-3 md:py-1"
+          >
+            Register
+          </button>
+        </div>
+
+        <img class="inline-block md:hidden" src="images/icon-menu.svg" alt="" />
       </nav>
       <section
-        class="fixed top-0 h-full w-2/3 right-0 bg-white flex flex-col gap-6 items-start p-6"
+        class="fixed top-0 h-full w-2/3 right-0 bg-white flex-col gap-4 items-start p-6 d hidden"
       >
         <img class="self-end" src="images/icon-close-menu.svg" alt="" />
-        <ul class="flex flex-col gap-5">
+        <ul class="flex flex-col gap-4">
           <li class="">
-            <div class="flex gap-4 items-center">
+            <div class="flex gap-3 items-center">
               <a href="">Features </a
               ><img src="images/icon-arrow-down.svg" alt="" />
             </div>
 
-            <ul class="flex flex-col gap-4 py-4 justify-center ml-5">
+            <ul class="flex flex-col gap-3 py-4 justify-center ml-5">
               <li class="flex flex-row gap-3 justify-center items-center">
                 <img src="images/icon-todo.svg" alt="" />
                 <a href="">Todo List</a>
@@ -82,34 +159,47 @@
           </li>
         </ul>
         <button class="border-none outline-none self-center">login</button>
-        <button class="outline outline-1 self-center">Register</button>
+        <button class="outline outline-1 self-center py-2 w-full rounded-xl">
+          Register
+        </button>
       </section>
-      <main>
+      <main class="flex flex-col gap-8 md:flex-row-reverse md:px-16 lg:px-20">
         <div>
-          <img src="images/image-hero-mobile.png" alt="" />
+          <img
+            class="hidden md:inline-block"
+            src="images/image-hero-desktop.png"
+            alt=""
+          />
+          <img
+            class="inline-block md:hidden"
+            src="images/image-hero-mobile.png"
+            alt=""
+          />
         </div>
-        <div>
-          <h1>Make remote work</h1>
-          <p>
+        <div
+          class="flex flex-col items-center gap-4 px-4 md:justify-between md:items-start md:mt-36 md:gap-10"
+        >
+          <h1 class="hidden md:inline-block md:text-5xl font-bold lg:text-6xl">
+            Make <span class="block">remote work</span>
+          </h1>
+          <h1 class="font-bold text-4xl md:hidden">Make remote work</h1>
+          <p class="text-center text-xl md:text-left">
             Get your team in sync, no matter your location. Streamline
             processes,create team rituals, and watch productivity soar.
           </p>
-          <button>Learn more</button>
-        </div>
-        <div>
-          <img src="images/client-databiz.svg" alt="" />
-          <img src="images/client-audiophile.svg" alt="" />
-          <img src="images/client-meet.svg" alt="" />
-          <img src="images/client-maker.svg" alt="" />
+          <button class="text-white bg-black rounded-xl px-7 py-3">
+            Learn more
+          </button>
+          <div
+            class="flex w-full justify-between items-center px-4 my-10 md:justify-between"
+          >
+            <img class="w-14" src="images/client-databiz.svg" alt="" />
+            <img class="w-14" src="images/client-audiophile.svg" alt="" />
+            <img class="w-14" src="images/client-meet.svg" alt="" />
+            <img class="w-14" src="images/client-maker.svg" alt="" />
+          </div>
         </div>
       </main>
-
-      <div class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>
-      </div>
     </section>
   </body>
 </html>
