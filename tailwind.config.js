@@ -2,7 +2,14 @@
 module.exports = {
   content: ["./public/index.html", "./src/index.js"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Epilogue: ["Epilogue"],
+      },
+      colors: {
+        grays: "hsl(0, 0%, 41%)",
+      },
+    },
   },
   plugins: [],
 };
